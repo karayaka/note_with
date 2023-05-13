@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'app_tools/color_schemes.dart';
 
 void main() {
