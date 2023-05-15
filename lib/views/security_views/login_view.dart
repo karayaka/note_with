@@ -24,7 +24,7 @@ class LoginMobil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoginRegisterForm();
+    return Center(child: LoginRegisterForm());
   }
 }
 

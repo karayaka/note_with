@@ -5,7 +5,7 @@ class LoginRegisterForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
         length: 2,
         child: Column(
           children: [
@@ -15,10 +15,10 @@ class LoginRegisterForm extends StatelessWidget {
                 Tab(child: Text("Register")),
               ],
             ),
-            Center(
+            Expanded(
               child: TabBarView(children: [
-                Center(child: Text("Login")),
-                Center(child: Text("Registert")),
+                Center(child: LoginForm()),
+                Center(child: RegisterForm()),
               ]),
             )
           ],
@@ -34,75 +34,77 @@ class RegisterForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      child: Column(
-        children: [
-          TextFormField(
-            keyboardType: TextInputType.emailAddress,
-            textInputAction: TextInputAction.next,
-            //cursorColor: kPrimaryColor,
-            onSaved: (email) {},
-            decoration: InputDecoration(
-              hintText: "Your email",
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Icon(Icons.person),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: TextFormField(
-              textInputAction: TextInputAction.done,
-              obscureText: true,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.next,
               //cursorColor: kPrimaryColor,
+              onSaved: (email) {},
               decoration: InputDecoration(
-                hintText: "Your password",
+                hintText: "Your email",
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(20),
-                  child: Icon(Icons.lock),
+                  child: Icon(Icons.person),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: TextFormField(
-              textInputAction: TextInputAction.done,
-              //cursorColor: kPrimaryColor,
-              decoration: InputDecoration(
-                hintText: "Name",
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Icon(Icons.lock),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: TextFormField(
+                textInputAction: TextInputAction.done,
+                obscureText: true,
+                //cursorColor: kPrimaryColor,
+                decoration: InputDecoration(
+                  hintText: "Your password",
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Icon(Icons.lock),
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: TextFormField(
-              textInputAction: TextInputAction.done,
-              //cursorColor: kPrimaryColor,
-              decoration: InputDecoration(
-                hintText: "Surname",
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Icon(Icons.lock),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: TextFormField(
+                textInputAction: TextInputAction.done,
+                //cursorColor: kPrimaryColor,
+                decoration: InputDecoration(
+                  hintText: "Name",
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Icon(Icons.lock),
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(
-              "Register".toUpperCase(),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: TextFormField(
+                textInputAction: TextInputAction.done,
+                //cursorColor: kPrimaryColor,
+                decoration: InputDecoration(
+                  hintText: "Surname",
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Icon(Icons.lock),
+                  ),
+                ),
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-        ],
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                "Register".toUpperCase(),
+              ),
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
@@ -116,45 +118,47 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-      child: Column(
-        children: [
-          TextFormField(
-            keyboardType: TextInputType.emailAddress,
-            textInputAction: TextInputAction.next,
-            //cursorColor: kPrimaryColor,
-            onSaved: (email) {},
-            decoration: InputDecoration(
-              hintText: "Your email",
-              prefixIcon: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Icon(Icons.person),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: TextFormField(
-              textInputAction: TextInputAction.done,
-              obscureText: true,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            TextFormField(
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.next,
               //cursorColor: kPrimaryColor,
+              onSaved: (email) {},
               decoration: InputDecoration(
-                hintText: "Your password",
+                hintText: "Your email",
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(20),
-                  child: Icon(Icons.lock),
+                  child: Icon(Icons.person),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text(
-              "Login".toUpperCase(),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              child: TextFormField(
+                textInputAction: TextInputAction.done,
+                obscureText: true,
+                //cursorColor: kPrimaryColor,
+                decoration: InputDecoration(
+                  hintText: "Your password",
+                  prefixIcon: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Icon(Icons.lock),
+                  ),
+                ),
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-        ],
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                "Login".toUpperCase(),
+              ),
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
