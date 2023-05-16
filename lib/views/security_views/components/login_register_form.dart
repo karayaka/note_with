@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class LoginRegisterForm extends StatelessWidget {
   const LoginRegisterForm({Key? key}) : super(key: key);
@@ -40,59 +41,36 @@ class RegisterForm extends StatelessWidget {
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
-              //cursorColor: kPrimaryColor,
+              //cursorColor: ,
               onSaved: (email) {},
               decoration: InputDecoration(
                 hintText: "Your email",
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Icon(Icons.person),
-                ),
+                prefixIcon: Icon(Icons.person),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: TextFormField(
-                textInputAction: TextInputAction.done,
-                obscureText: true,
-                //cursorColor: kPrimaryColor,
-                decoration: InputDecoration(
-                  hintText: "Your password",
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Icon(Icons.lock),
-                  ),
-                ),
+            TextFormField(
+              textInputAction: TextInputAction.done,
+              obscureText: true,
+              //cursorColor: kPrimaryColor,
+              decoration: InputDecoration(
+                hintText: "Your password",
+                prefixIcon: Icon(Icons.lock),
               ),
             ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: TextFormField(
-                textInputAction: TextInputAction.done,
-                //cursorColor: kPrimaryColor,
-                decoration: InputDecoration(
-                  hintText: "Name",
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Icon(Icons.lock),
-                  ),
-                ),
+            TextFormField(
+              textInputAction: TextInputAction.done,
+              //cursorColor: kPrimaryColor,
+              decoration: InputDecoration(
+                hintText: "Name",
+                prefixIcon: Icon(Icons.lock),
               ),
             ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: TextFormField(
-                textInputAction: TextInputAction.done,
-                //cursorColor: kPrimaryColor,
-                decoration: InputDecoration(
-                  hintText: "Surname",
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Icon(Icons.lock),
-                  ),
-                ),
+            TextFormField(
+              textInputAction: TextInputAction.done,
+              //cursorColor: kPrimaryColor,
+              decoration: InputDecoration(
+                hintText: "Surname",
+                prefixIcon: Icon(Icons.lock),
               ),
             ),
             const SizedBox(height: 20),
@@ -128,10 +106,7 @@ class LoginForm extends StatelessWidget {
               onSaved: (email) {},
               decoration: InputDecoration(
                 hintText: "Your email",
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Icon(Icons.person),
-                ),
+                prefixIcon: Icon(Icons.person),
               ),
             ),
             Padding(
@@ -142,21 +117,29 @@ class LoginForm extends StatelessWidget {
                 //cursorColor: kPrimaryColor,
                 decoration: InputDecoration(
                   hintText: "Your password",
-                  prefixIcon: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Icon(Icons.lock),
-                  ),
+                  prefixIcon: Icon(Icons.lock),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {},
               child: Text(
                 "Login".toUpperCase(),
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
+            const Divider(),
+            const SizedBox(height: 5),
+            ElevatedButton.icon(
+              icon: SvgPicture.asset(
+                "assets/icons/google-plus.svg",
+                width: 15,
+                height: 15,
+              ),
+              onPressed: () {},
+              label: Text("Google İle Giriş"),
+            ),
           ],
         ),
       ),

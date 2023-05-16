@@ -35,6 +35,8 @@ dependencies:
   dio: ^5.1.2
   #satate managment
   get: ^4.6.5
+  #svg images
+  flutter_svg: ^2.0.5
 
 
 dev_dependencies:
@@ -58,6 +60,11 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:
