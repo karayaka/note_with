@@ -37,6 +37,8 @@ dependencies:
   get: ^4.6.5
   #svg images
   flutter_svg: ^2.0.5
+  #color pallette
+  flex_color_scheme: ^7.1.2
 
 
 dev_dependencies:
@@ -62,7 +64,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
     - assets/icons/
 
 

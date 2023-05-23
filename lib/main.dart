@@ -1,9 +1,10 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:note_with/views/security_views/login_view.dart';
-import 'app_tools/color_schemes.dart';
+import 'package:note_with/views/security_views/security_view.dart';
 import 'app_tools/languages .dart';
+import 'datas/bindings/initial_binding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +18,15 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       translations: Languages(),
       locale: Get.deviceLocale,
+      initialBinding: InitialBinding(),
       fallbackLocale: const Locale('en', 'US'),
       title: 'Note App',
-      theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
-      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
-      home: LoginView(),
+      theme:
+          FlexThemeData.light(useMaterial3: true, scheme: FlexScheme.mandyRed),
+      // The Mandy red, dark theme.
+      darkTheme:
+          FlexThemeData.dark(useMaterial3: true, scheme: FlexScheme.mandyRed),
+      home: SecurityView(),
     );
   }
 }
