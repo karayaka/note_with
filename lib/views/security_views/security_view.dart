@@ -11,7 +11,7 @@ class SecurityView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Başlık")),
+        appBar: AppBar(title: Obx(() => Text(ctrl.title.value.toUpperCase()))),
         body: Responsive(
           mobile: SecurityMobil(),
           desktop: SecurityDesktop(),
@@ -26,8 +26,10 @@ class SecurityMobil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        height: 650,
+        width: 480,
         child: Column(children: [
-          const LoginScreenTopImage(),
+          LoginScreenTopImage(),
           SecurityPageViewer(),
         ]),
       ),
@@ -40,11 +42,18 @@ class SecurityDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const LoginScreenTopImage(),
-        SecurityPageViewer(),
-      ],
+    return Center(
+      child: SizedBox(
+        height: 900,
+        width: 900,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(child: LoginScreenTopImage()),
+            SecurityPageViewer(),
+          ],
+        ),
+      ),
     );
   }
 }
